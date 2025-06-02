@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio - Maria Emilia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --marrom: #6f4e37;
+      --bege: #fdf6ee;
+      --texto: #3b2f2f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bege);
+      color: var(--texto);
+    }
+
+    header {
+      background-color: var(--marrom);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section {
+      display: none;
+      margin-bottom: 2rem;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      border-bottom: 2px solid var(--marrom);
+      padding-bottom: 0.5rem;
+    }
+
+    .skills-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-list li {
+      background-color: var(--marrom);
+      color: white;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: var(--marrom);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--marrom);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Maria Emília</h1>
+    <nav>
+      <a onclick="mostrarSecao('sobre')">Sobre</a>
+      <a onclick="mostrarSecao('habilidades')">Habilidades</a>
+      <a onclick="mostrarSecao('projetos')">Projetos</a>
+      <a onclick="mostrarSecao('contato')">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="sobre" class="section active">
+      <h2>Sobre Mim</h2>
+      <p>
+        Graduanda em Ciências da Computação pelo CESAR, atualmente no primeiro período. Participa de projeto de pesquisa financiado pela instituição, com foco na criação de protótipos acessíveis para pessoas com deficiência auditiva, integrando conhecimentos em tecnologia, acessibilidade e inclusão.
+      </p>
+      <p>
+        Possui conhecimentos em Python e JavaScript, além de experiência em práticas de Projetos. Possui experiências anteriores em diferentes áreas do mercado, como setor financeiro, administrativo, comercial e empreendedorismo.
+      </p>
+    </section>
+
+    <section id="habilidades" class="section">
+      <h2>Habilidades</h2>
+      <ul class="skills-list">
+        <li><strong>Hard Skills:</strong> Python, JavaScript, Projetos, Análise de Dados (Google + CIEE), Hardware (básico)</li>
+        <li><strong>Idiomas:</strong> Inglês (fluente), Espanhol (básico), Italiano (básico)</li>
+        <li><strong>Soft Skills:</strong> Proatividade, Organização, Adaptabilidade, Pensamento Crítico</li>
+      </ul>
+    </section>
+
+    <section id="projetos" class="section">
+      <h2>Projetos</h2>
+      <ul>
+        <li>
+          <strong>WOD Tracker</strong> – Sistema em Python para monitoramento de treinos de CrossFit.
+        </li>
+        <li>
+          <strong>Ecos do Fim</strong> – Jogo de tabuleiro cooperativo pós-apocalíptico que utiliza tecnologia embarcada (Arduino, sensores e RFID) para integrar Libras (Língua Brasileira de Sinais) como ferramenta essencial de comunicação no jogo.<br><br>
+          A dinâmica combina estratégia, narrativa e acessibilidade, promovendo um espaço inclusivo onde todos os jogadores precisam colaborar em silêncio usando Libras ou símbolos visuais para vencer.<br><br>
+          <em>Foco na deficiência auditiva:</em> O jogo promove a inclusão de pessoas surdas, impondo o silêncio como mecânica e incentivando o uso de Libras, criando empatia e respeito à diversidade.
+        </li>
+      </ul>
+    </section>
+
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Você pode me encontrar por aqui:</p>
+      <ul>
+        <li>Email: <a href="mailto:mess@cesar.school">mess@cesar.school</a></li>
+        <li>LinkedIn: <a href="#" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/mariaemiliass/</a></li>
+        <li>GitHub: <a href="#" target="_blank" rel="noopener noreferrer">https://github.com/MariaEmilia-CESAR</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Desenvolvido por Maria Emilia | <a href="mailto:mess@cesar.school" style="color: white; text-decoration: underline;">mess@cesar.school</a></p>
+  </footer>
+
+  <script>
+    function mostrarSecao(id) {
+      const secoes = document.querySelectorAll('.section');
+      secoes.forEach(secao => {
+        if(secao.id === id) {
+          secao.classList.add('active');
+        } else {
+          secao.classList.remove('active');
+        }
+      });
+      // Scroll para o topo da seção mostrada
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
